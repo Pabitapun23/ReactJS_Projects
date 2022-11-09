@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ItemQuotes from './ItemQuotes';
-
+import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 
 const App = () => {
     const [items, setItems] = useState([]);
@@ -16,8 +17,12 @@ const App = () => {
 
   return (
    <div>
-     <button onClick={() => fetchData()}>Fetch</button>
-      {items.map((item) => <ItemQuotes author={item.from} text={item.text}/>)}             
+     <button onClick={() => fetchData()}>Fetch</button>        
+      <Box sx={{ width: '100%' }}>
+      <Stack spacing={2}>
+        {items.map((item) => <ItemQuotes author={item.from} text={item.text}/>)}  
+      </Stack>
+    </Box>         
    </div>
   )
 }

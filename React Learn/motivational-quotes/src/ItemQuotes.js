@@ -1,7 +1,5 @@
 import React from 'react';
 import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -14,13 +12,9 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const ItemQuotes = ({text, author}) => {
   return (
-      <div>
-        <Box sx={{ width: '100%' }}>
-            <Stack spacing={2}>
-                <Item>{text}</Item>
-                <p>Author: {author}</p>
-            </Stack>
-        </Box>        
+    <div>
+      <Item>{text}</Item>
+      <p>{author}</p>
     </div>
   )
 }
